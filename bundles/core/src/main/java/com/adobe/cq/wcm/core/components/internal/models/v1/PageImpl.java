@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -130,6 +131,7 @@ public class PageImpl extends AbstractComponentImpl implements Page {
             title = currentPage.getName();
         }
         Tag[] tags = currentPage.getTags();
+        Arrays.sort(tags, Comparator.comparing(Tag::getName));
         keywords = new String[tags.length];
         int index = 0;
         for (Tag tag : tags) {
