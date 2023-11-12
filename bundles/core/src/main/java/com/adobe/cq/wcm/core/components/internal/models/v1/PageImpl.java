@@ -131,6 +131,7 @@ public class PageImpl extends AbstractComponentImpl implements Page {
             title = currentPage.getName();
         }
         Tag[] tags = currentPage.getTags();
+        // sort to maintain the order of tag elements
         Arrays.sort(tags, Comparator.comparing(Tag::getName));
         keywords = new String[tags.length];
         int index = 0;
